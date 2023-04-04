@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		5541AA0129D9EC3E00643055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA0029D9EC3E00643055 /* AppDelegate.swift */; };
 		5541AA0329D9EC3E00643055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA0229D9EC3E00643055 /* SceneDelegate.swift */; };
-		5541AA0529D9EC3E00643055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA0429D9EC3E00643055 /* ViewController.swift */; };
 		5541AA0829D9EC3E00643055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5541AA0629D9EC3E00643055 /* Main.storyboard */; };
 		5541AA0A29D9EC3F00643055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5541AA0929D9EC3F00643055 /* Assets.xcassets */; };
 		5541AA0D29D9EC3F00643055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5541AA0B29D9EC3F00643055 /* LaunchScreen.storyboard */; };
+		5541AA1629D9ED9700643055 /* person.json in Resources */ = {isa = PBXBuildFile; fileRef = 5541AA1529D9ED9700643055 /* person.json */; };
+		5541AA1929D9F00000643055 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA1829D9F00000643055 /* Person.swift */; };
+		5541AA1B29D9F15000643055 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA1A29D9F15000643055 /* Address.swift */; };
+		5541AA1D29D9F19800643055 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA1C29D9F19800643055 /* PhoneNumber.swift */; };
+		5541AA1F29D9F2A700643055 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA1E29D9F2A700643055 /* DataManager.swift */; };
+		5541AA2129D9F4EE00643055 /* PersonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA2029D9F4EE00643055 /* PersonDataManager.swift */; };
+		5541AA2429DA4B1500643055 /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA2329DA4B1500643055 /* PersonTableViewController.swift */; };
+		5541AA2E29DB703400643055 /* JsonPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA2D29DB703400643055 /* JsonPersistable.swift */; };
+		5541AA3229DB975500643055 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3129DB975500643055 /* Persistable.swift */; };
+		5541AA3429DB9D4200643055 /* GenericDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3329DB9D4200643055 /* GenericDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5541A9FD29D9EC3E00643055 /* DataManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5541AA0029D9EC3E00643055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5541AA0229D9EC3E00643055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5541AA0429D9EC3E00643055 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5541AA0729D9EC3E00643055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5541AA0929D9EC3F00643055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5541AA0C29D9EC3F00643055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5541AA0E29D9EC3F00643055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5541AA1529D9ED9700643055 /* person.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = person.json; sourceTree = "<group>"; };
+		5541AA1829D9F00000643055 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		5541AA1A29D9F15000643055 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		5541AA1C29D9F19800643055 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
+		5541AA1E29D9F2A700643055 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5541AA2029D9F4EE00643055 /* PersonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataManager.swift; sourceTree = "<group>"; };
+		5541AA2329DA4B1500643055 /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
+		5541AA2D29DB703400643055 /* JsonPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPersistable.swift; sourceTree = "<group>"; };
+		5541AA3129DB975500643055 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		5541AA3329DB9D4200643055 /* GenericDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,48 @@
 		5541A9FF29D9EC3E00643055 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				5541AA2229DA4AFD00643055 /* Controller */,
+				5541AA1729D9EFEF00643055 /* Model */,
+				5541AA1429D9EC6400643055 /* Data */,
 				5541AA0029D9EC3E00643055 /* AppDelegate.swift */,
 				5541AA0229D9EC3E00643055 /* SceneDelegate.swift */,
-				5541AA0429D9EC3E00643055 /* ViewController.swift */,
 				5541AA0629D9EC3E00643055 /* Main.storyboard */,
 				5541AA0929D9EC3F00643055 /* Assets.xcassets */,
 				5541AA0B29D9EC3F00643055 /* LaunchScreen.storyboard */,
 				5541AA0E29D9EC3F00643055 /* Info.plist */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		5541AA1429D9EC6400643055 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5541AA1529D9ED9700643055 /* person.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5541AA1729D9EFEF00643055 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5541AA1829D9F00000643055 /* Person.swift */,
+				5541AA1A29D9F15000643055 /* Address.swift */,
+				5541AA1C29D9F19800643055 /* PhoneNumber.swift */,
+				5541AA1E29D9F2A700643055 /* DataManager.swift */,
+				5541AA2029D9F4EE00643055 /* PersonDataManager.swift */,
+				5541AA2D29DB703400643055 /* JsonPersistable.swift */,
+				5541AA3129DB975500643055 /* Persistable.swift */,
+				5541AA3329DB9D4200643055 /* GenericDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5541AA2229DA4AFD00643055 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5541AA2329DA4B1500643055 /* PersonTableViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5541AA1629D9ED9700643055 /* person.json in Resources */,
 				5541AA0D29D9EC3F00643055 /* LaunchScreen.storyboard in Resources */,
 				5541AA0A29D9EC3F00643055 /* Assets.xcassets in Resources */,
 				5541AA0829D9EC3E00643055 /* Main.storyboard in Resources */,
@@ -138,9 +190,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5541AA0529D9EC3E00643055 /* ViewController.swift in Sources */,
 				5541AA0129D9EC3E00643055 /* AppDelegate.swift in Sources */,
+				5541AA1929D9F00000643055 /* Person.swift in Sources */,
+				5541AA1F29D9F2A700643055 /* DataManager.swift in Sources */,
 				5541AA0329D9EC3E00643055 /* SceneDelegate.swift in Sources */,
+				5541AA1B29D9F15000643055 /* Address.swift in Sources */,
+				5541AA3429DB9D4200643055 /* GenericDataManager.swift in Sources */,
+				5541AA2129D9F4EE00643055 /* PersonDataManager.swift in Sources */,
+				5541AA2E29DB703400643055 /* JsonPersistable.swift in Sources */,
+				5541AA3229DB975500643055 /* Persistable.swift in Sources */,
+				5541AA1D29D9F19800643055 /* PhoneNumber.swift in Sources */,
+				5541AA2429DA4B1500643055 /* PersonTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

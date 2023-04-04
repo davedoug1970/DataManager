@@ -1,0 +1,50 @@
+[
+    {
+        "id": "4f1a52e3-9ea6-4056-8b33-9baccdb4f91c",
+        "firstName": "John",
+        "lastName": "Doe",
+        "gender": "Male",
+        "age": 24,
+        "address": {
+            "streetAddress": "126 Main Street",
+            "city": "San Jone",
+            "state": "CA",
+            "postalCode": "39221"
+        },
+        "phoneNumbers": [
+            { "type": "Home", "number": "7383627627" }
+        ]
+    },
+    {
+        "id": "25cbdd58-78bb-4444-9761-769e160ebc7b",
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "gender": "Female",
+        "age": 23,
+        "address": {
+            "streetAddress": "200 Somewhere Street",
+            "city": "Mobile",
+            "state": "AL",
+            "postalCode": "36695"
+        },
+        "phoneNumbers": [
+            { "type": "Home", "number": "2513627627" }
+        ]
+    },
+    {
+        "id": "2943f140-de6a-481a-af88-2c79d457e167",
+        "firstName": "Bubba",
+        "lastName": "Jones",
+        "gender": "Male",
+        "age": 28,
+        "address": {
+            "streetAddress": "126 Anywhere Blvd",
+            "city": "Birmingham",
+            "state": "AL",
+            "postalCode": "35022"
+        },
+        "phoneNumbers": [
+            { "type": "Home", "number": "2053627627" }
+        ]
+    }
+]
