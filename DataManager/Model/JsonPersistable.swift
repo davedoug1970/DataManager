@@ -14,9 +14,9 @@ class JsonPersistable: Persistable {
         var fileLocation = Bundle.main.url(forResource: fileName, withExtension: "json")!
     
         if !readonly {
-            fileLocation = getDocumentsDirectory().appendingPathComponent("\(fileName).json")
+            fileLocation = Utilities.getDocumentsDirectory().appendingPathComponent("\(fileName).json")
             
-            let fileExists = FileManager.default.fileExists(atPath: fileLocation.absoluteString)
+            let fileExists = FileManager.default.fileExists(atPath: fileLocation.path())
             
             // if we have not written first file to documents directory then load data from json file
             // included in the app bundle
@@ -57,7 +57,7 @@ class JsonPersistable: Persistable {
         let jsonString = try! JSONEncoder().encode(data)
         
         if let jsonData = String(data: jsonString, encoding: .utf8) {
-            let pathWithFileName = getDocumentsDirectory().appendingPathComponent("\(fileName).json")
+            let pathWithFileName = Utilities.getDocumentsDirectory().appendingPathComponent("\(fileName).json")
             do {
                 try jsonData.write(to: pathWithFileName, atomically: true, encoding: .utf8)
                 return true
@@ -67,10 +67,5 @@ class JsonPersistable: Persistable {
         }
         
         return false
-    }
-    
-    private func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
     }
 }

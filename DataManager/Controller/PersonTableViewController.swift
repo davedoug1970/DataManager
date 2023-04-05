@@ -8,11 +8,12 @@
 import UIKit
 
 class PersonTableViewController: UITableViewController {
-    let dataManager = GenericDataManager<Person>(persistanceStrategy: JsonPersistable(), readonly: true)
-    
+    let dataManager = DataManager<Person>(persistanceStrategy: PlistPersistable(), readonly: false)
+           
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dataManager.save()
     }
 
     // MARK: - Table view data source

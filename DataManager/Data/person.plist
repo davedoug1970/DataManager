@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<string>4f1a52e3-9ea6-4056-8b33-9baccdb4f91c</string>
+		<key>firstName</key>
+		<string>John</string>
+		<key>lastName</key>
+		<string>Doe</string>
+		<key>gender</key>
+		<string>Male</string>
+		<key>age</key>
+		<integer>24</integer>
+		<key>address</key>
+		<dict>
+			<key>streetAddress</key>
+			<string>126 Main Street</string>
+			<key>city</key>
+			<string>San Jone</string>
+			<key>state</key>
+			<string>CA</string>
+			<key>postalCode</key>
+			<string>39221</string>
+		</dict>
+		<key>phoneNumbers</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>Home</string>
+				<key>number</key>
+				<string>7383627627</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>25cbdd58-78bb-4444-9761-769e160ebc7b</string>
+		<key>firstName</key>
+		<string>Jane</string>
+		<key>lastName</key>
+		<string>Doe</string>
+		<key>gender</key>
+		<string>Female</string>
+		<key>age</key>
+		<integer>23</integer>
+		<key>address</key>
+		<dict>
+			<key>streetAddress</key>
+			<string>200 Somewhere Street</string>
+			<key>city</key>
+			<string>Mobile</string>
+			<key>state</key>
+			<string>AL</string>
+			<key>postalCode</key>
+			<string>36695</string>
+		</dict>
+		<key>phoneNumbers</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>Home</string>
+				<key>number</key>
+				<string>2513627627</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>2943f140-de6a-481a-af88-2c79d457e167</string>
+		<key>firstName</key>
+		<string>Bubba</string>
+		<key>lastName</key>
+		<string>Jones</string>
+		<key>gender</key>
+		<string>Male</string>
+		<key>age</key>
+		<integer>28</integer>
+		<key>address</key>
+		<dict>
+			<key>streetAddress</key>
+			<string>126 Anywhere Blvd</string>
+			<key>city</key>
+			<string>Birmingham</string>
+			<key>state</key>
+			<string>AL</string>
+			<key>postalCode</key>
+			<string>35022</string>
+		</dict>
+		<key>phoneNumbers</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>Home</string>
+				<key>number</key>
+				<string>2053627627</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

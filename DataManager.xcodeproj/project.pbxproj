@@ -16,12 +16,13 @@
 		5541AA1929D9F00000643055 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA1829D9F00000643055 /* Person.swift */; };
 		5541AA1B29D9F15000643055 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA1A29D9F15000643055 /* Address.swift */; };
 		5541AA1D29D9F19800643055 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA1C29D9F19800643055 /* PhoneNumber.swift */; };
-		5541AA1F29D9F2A700643055 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA1E29D9F2A700643055 /* DataManager.swift */; };
-		5541AA2129D9F4EE00643055 /* PersonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA2029D9F4EE00643055 /* PersonDataManager.swift */; };
 		5541AA2429DA4B1500643055 /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA2329DA4B1500643055 /* PersonTableViewController.swift */; };
 		5541AA2E29DB703400643055 /* JsonPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA2D29DB703400643055 /* JsonPersistable.swift */; };
 		5541AA3229DB975500643055 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3129DB975500643055 /* Persistable.swift */; };
-		5541AA3429DB9D4200643055 /* GenericDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3329DB9D4200643055 /* GenericDataManager.swift */; };
+		5541AA3429DB9D4200643055 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3329DB9D4200643055 /* DataManager.swift */; };
+		5541AA3629DC66C700643055 /* person.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5541AA3529DC66C700643055 /* person.plist */; };
+		5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3729DCA09D00643055 /* PlistPersistable.swift */; };
+		5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3929DCA2D800643055 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +37,13 @@
 		5541AA1829D9F00000643055 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5541AA1A29D9F15000643055 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		5541AA1C29D9F19800643055 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
-		5541AA1E29D9F2A700643055 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		5541AA2029D9F4EE00643055 /* PersonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataManager.swift; sourceTree = "<group>"; };
 		5541AA2329DA4B1500643055 /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
 		5541AA2D29DB703400643055 /* JsonPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPersistable.swift; sourceTree = "<group>"; };
 		5541AA3129DB975500643055 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
-		5541AA3329DB9D4200643055 /* GenericDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataManager.swift; sourceTree = "<group>"; };
+		5541AA3329DB9D4200643055 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5541AA3529DC66C700643055 /* person.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = person.plist; sourceTree = "<group>"; };
+		5541AA3729DCA09D00643055 /* PlistPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistPersistable.swift; sourceTree = "<group>"; };
+		5541AA3929DCA2D800643055 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				5541AA1529D9ED9700643055 /* person.json */,
+				5541AA3529DC66C700643055 /* person.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -101,11 +104,11 @@
 				5541AA1829D9F00000643055 /* Person.swift */,
 				5541AA1A29D9F15000643055 /* Address.swift */,
 				5541AA1C29D9F19800643055 /* PhoneNumber.swift */,
-				5541AA1E29D9F2A700643055 /* DataManager.swift */,
-				5541AA2029D9F4EE00643055 /* PersonDataManager.swift */,
 				5541AA2D29DB703400643055 /* JsonPersistable.swift */,
 				5541AA3129DB975500643055 /* Persistable.swift */,
-				5541AA3329DB9D4200643055 /* GenericDataManager.swift */,
+				5541AA3329DB9D4200643055 /* DataManager.swift */,
+				5541AA3729DCA09D00643055 /* PlistPersistable.swift */,
+				5541AA3929DCA2D800643055 /* Utilities.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				5541AA1629D9ED9700643055 /* person.json in Resources */,
 				5541AA0D29D9EC3F00643055 /* LaunchScreen.storyboard in Resources */,
+				5541AA3629DC66C700643055 /* person.plist in Resources */,
 				5541AA0A29D9EC3F00643055 /* Assets.xcassets in Resources */,
 				5541AA0829D9EC3E00643055 /* Main.storyboard in Resources */,
 			);
@@ -192,11 +196,11 @@
 			files = (
 				5541AA0129D9EC3E00643055 /* AppDelegate.swift in Sources */,
 				5541AA1929D9F00000643055 /* Person.swift in Sources */,
-				5541AA1F29D9F2A700643055 /* DataManager.swift in Sources */,
+				5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */,
 				5541AA0329D9EC3E00643055 /* SceneDelegate.swift in Sources */,
 				5541AA1B29D9F15000643055 /* Address.swift in Sources */,
-				5541AA3429DB9D4200643055 /* GenericDataManager.swift in Sources */,
-				5541AA2129D9F4EE00643055 /* PersonDataManager.swift in Sources */,
+				5541AA3429DB9D4200643055 /* DataManager.swift in Sources */,
+				5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */,
 				5541AA2E29DB703400643055 /* JsonPersistable.swift in Sources */,
 				5541AA3229DB975500643055 /* Persistable.swift in Sources */,
 				5541AA1D29D9F19800643055 /* PhoneNumber.swift in Sources */,
