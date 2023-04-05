@@ -104,11 +104,7 @@
 				5541AA1829D9F00000643055 /* Person.swift */,
 				5541AA1A29D9F15000643055 /* Address.swift */,
 				5541AA1C29D9F19800643055 /* PhoneNumber.swift */,
-				5541AA2D29DB703400643055 /* JsonPersistable.swift */,
-				5541AA3129DB975500643055 /* Persistable.swift */,
-				5541AA3329DB9D4200643055 /* DataManager.swift */,
-				5541AA3729DCA09D00643055 /* PlistPersistable.swift */,
-				5541AA3929DCA2D800643055 /* Utilities.swift */,
+				5541AA3D29DDCB9600643055 /* DataManager */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +115,18 @@
 				5541AA2329DA4B1500643055 /* PersonTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5541AA3D29DDCB9600643055 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5541AA2D29DB703400643055 /* JsonPersistable.swift */,
+				5541AA3129DB975500643055 /* Persistable.swift */,
+				5541AA3329DB9D4200643055 /* DataManager.swift */,
+				5541AA3729DCA09D00643055 /* PlistPersistable.swift */,
+				5541AA3929DCA2D800643055 /* Utilities.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
