@@ -8,14 +8,44 @@
 import UIKit
 
 class PersonTableViewController: UITableViewController {
-    let dataManager = DataManager<Person>(persistanceStrategy: PlistPersistable(), readonly: false)
+    let dataManager = DataManager<Person>(persistanceStrategy: JsonPersistable(), readonly: false)
            
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dataManager.save()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
+    @IBAction func unwindToPersonTableView(_ segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind",
+            let sourceViewController = segue.source as? PersonDetailTableViewController,
+            let person = sourceViewController.person else { return }
+        
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            if dataManager.update(item: person) {
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+        } else {
+            let newIndexPath = IndexPath(row: dataManager.fetch().count, section: 0)
+            if dataManager.add(item: person) {
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+    }
+    
+    @IBSegueAction func addEditPerson(_ coder: NSCoder, sender: Any?) -> PersonDetailTableViewController? {
+        if let cell = sender as? UITableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            let personToEdit = dataManager.fetch()[indexPath.row]
+             return PersonDetailTableViewController(coder: coder, person: personToEdit)
+        } else {
+            return PersonDetailTableViewController(coder: coder, person: nil)
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

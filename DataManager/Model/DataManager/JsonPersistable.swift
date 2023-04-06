@@ -54,7 +54,10 @@ class JsonPersistable: Persistable {
         }
         
         let fileName = String(describing: Entity.self).lowercased()
-        let jsonString = try! JSONEncoder().encode(data)
+        let jsonEncoder = JSONEncoder()
+        // added to make output json more readable
+        jsonEncoder.outputFormatting = .prettyPrinted
+        let jsonString = try! jsonEncoder.encode(data)
         
         if let jsonData = String(data: jsonString, encoding: .utf8) {
             let pathWithFileName = Utilities.getDocumentsDirectory().appendingPathComponent("\(fileName).json")
