@@ -69,12 +69,12 @@ class PersonDetailTableViewController: UITableViewController {
             person!.lastName = lastNameTextField.text!
             
             switch genderTextField.text! {
-            case "Male":
-                person!.gender = .Male
-            case "Female":
-                person!.gender = .Female
+            case "male":
+                person!.gender = .male
+            case "female":
+                person!.gender = .female
             default:
-                person!.gender = .Male
+                person!.gender = .male
             }
             
             person!.age = Int(ageTextField.text!)!
@@ -84,28 +84,28 @@ class PersonDetailTableViewController: UITableViewController {
             person!.address.postalCode = postalCodeTextField.text!
             
             switch phoneTypeTextField.text! {
-            case "Home":
-                person!.phoneNumbers[0].type = .Home
-            case "Work":
-                person!.phoneNumbers[0].type = .Work
+            case "home":
+                person!.phoneNumbers[0].type = .home
+            case "work":
+                person!.phoneNumbers[0].type = .work
             default:
-                person!.phoneNumbers[0].type = .Home
+                person!.phoneNumbers[0].type = .home
             }
           
             person!.phoneNumbers[0].number = phoneNumberTextField.text!
         } else {
-            var gender: Gender = .Male
+            var gender: Gender = .male
             
-            if genderTextField.text! == "Female" {
-                gender = .Female
+            if genderTextField.text! == "female" {
+                gender = .female
             }
             
             let tempAddress = Address(streetAddress: streetAddressTextField.text!, city: cityTextField.text!, state: stateTextField.text!, postalCode: postalCodeTextField.text!)
             
-            var phoneType: PhoneType = .Home
+            var phoneType: PhoneType = .home
             
-            if phoneTypeTextField.text! == "Work" {
-                phoneType = .Work
+            if phoneTypeTextField.text! == "work" {
+                phoneType = .work
             }
             
             let tempPhoneNumber = PhoneNumber(type: phoneType, number: phoneNumberTextField.text!)

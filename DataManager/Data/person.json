@@ -3,7 +3,7 @@
         "id": "4f1a52e3-9ea6-4056-8b33-9baccdb4f91c",
         "firstName": "John",
         "lastName": "Doe",
-        "gender": "Male",
+        "gender": "male",
         "age": 24,
         "address": {
             "streetAddress": "126 Main Street",
@@ -12,14 +12,14 @@
             "postalCode": "39221"
         },
         "phoneNumbers": [
-            { "type": "Home", "number": "7383627627" }
+            { "type": "home", "number": "7383627627" }
         ]
     },
     {
         "id": "25cbdd58-78bb-4444-9761-769e160ebc7b",
         "firstName": "Jane",
         "lastName": "Doe",
-        "gender": "Female",
+        "gender": "female",
         "age": 23,
         "address": {
             "streetAddress": "200 Somewhere Street",
@@ -28,14 +28,14 @@
             "postalCode": "36695"
         },
         "phoneNumbers": [
-            { "type": "Home", "number": "2513627627" }
+            { "type": "home", "number": "2513627627" }
         ]
     },
     {
         "id": "2943f140-de6a-481a-af88-2c79d457e167",
         "firstName": "Bubba",
         "lastName": "Jones",
-        "gender": "Male",
+        "gender": "male",
         "age": 28,
         "address": {
             "streetAddress": "126 Anywhere Blvd",
@@ -44,7 +44,7 @@
             "postalCode": "35022"
         },
         "phoneNumbers": [
-            { "type": "Home", "number": "2053627627" }
+            { "type": "home", "number": "2053627627" }
         ]
     }
 ]

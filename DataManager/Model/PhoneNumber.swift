@@ -13,6 +13,6 @@ struct PhoneNumber: Codable {
 }
 
 enum PhoneType: String, Codable {
-    case Home
-    case Work
+    case home
+    case work
 }

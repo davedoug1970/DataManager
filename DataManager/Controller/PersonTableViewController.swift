@@ -8,7 +8,8 @@
 import UIKit
 
 class PersonTableViewController: UITableViewController {
-    let dataManager = DataManager<Person>(persistanceStrategy: JsonPersistable(), readonly: false)
+    //let dataManager = DataManager<Person>(persistanceStrategy: JsonPersistable(), readonly: false)
+    let dataManager = DataManager<Person>(persistanceStrategy: ApiPersistable(baseURL: "http://localhost:3001/person/", fetchAllEndPoint: "all", fetchEndPoint: "get/", updateEndPoint: "save", deleteEndPoint: "remove/"), readonly: false)
            
     override func viewDidLoad() {
         super.viewDidLoad()

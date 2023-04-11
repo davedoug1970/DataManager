@@ -18,8 +18,8 @@ struct Person: Codable, Identifiable {
 }
 
 enum Gender: String, Codable {
-   case Male
-   case Female
+   case male
+   case female
 }
 
 

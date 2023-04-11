@@ -10,7 +10,7 @@
 		<key>lastName</key>
 		<string>Doe</string>
 		<key>gender</key>
-		<string>Male</string>
+		<string>male</string>
 		<key>age</key>
 		<integer>24</integer>
 		<key>address</key>
@@ -28,7 +28,7 @@
 		<array>
 			<dict>
 				<key>type</key>
-				<string>Home</string>
+				<string>home</string>
 				<key>number</key>
 				<string>7383627627</string>
 			</dict>
@@ -42,7 +42,7 @@
 		<key>lastName</key>
 		<string>Doe</string>
 		<key>gender</key>
-		<string>Female</string>
+		<string>female</string>
 		<key>age</key>
 		<integer>23</integer>
 		<key>address</key>
@@ -60,7 +60,7 @@
 		<array>
 			<dict>
 				<key>type</key>
-				<string>Home</string>
+				<string>home</string>
 				<key>number</key>
 				<string>2513627627</string>
 			</dict>
@@ -74,7 +74,7 @@
 		<key>lastName</key>
 		<string>Jones</string>
 		<key>gender</key>
-		<string>Male</string>
+		<string>male</string>
 		<key>age</key>
 		<integer>28</integer>
 		<key>address</key>
@@ -92,7 +92,7 @@
 		<array>
 			<dict>
 				<key>type</key>
-				<string>Home</string>
+				<string>home</string>
 				<key>number</key>
 				<string>2053627627</string>
 			</dict>

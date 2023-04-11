@@ -24,6 +24,7 @@
 		5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3729DCA09D00643055 /* PlistPersistable.swift */; };
 		5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3929DCA2D800643055 /* Utilities.swift */; };
 		5541AA3F29DE064E00643055 /* PersonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3E29DE064E00643055 /* PersonDetailTableViewController.swift */; };
+		55FB145A29E5C22700599CC3 /* ApiPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145929E5C22700599CC3 /* ApiPersistable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5541AA3729DCA09D00643055 /* PlistPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistPersistable.swift; sourceTree = "<group>"; };
 		5541AA3929DCA2D800643055 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5541AA3E29DE064E00643055 /* PersonDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailTableViewController.swift; sourceTree = "<group>"; };
+		55FB145929E5C22700599CC3 /* ApiPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPersistable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				5541AA3329DB9D4200643055 /* DataManager.swift */,
 				5541AA3729DCA09D00643055 /* PlistPersistable.swift */,
 				5541AA3929DCA2D800643055 /* Utilities.swift */,
+				55FB145929E5C22700599CC3 /* ApiPersistable.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				5541AA0329D9EC3E00643055 /* SceneDelegate.swift in Sources */,
 				5541AA1B29D9F15000643055 /* Address.swift in Sources */,
 				5541AA3429DB9D4200643055 /* DataManager.swift in Sources */,
+				55FB145A29E5C22700599CC3 /* ApiPersistable.swift in Sources */,
 				5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */,
 				5541AA2E29DB703400643055 /* JsonPersistable.swift in Sources */,
 				5541AA3229DB975500643055 /* Persistable.swift in Sources */,
