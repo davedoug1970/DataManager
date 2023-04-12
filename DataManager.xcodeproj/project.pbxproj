@@ -25,6 +25,9 @@
 		5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3929DCA2D800643055 /* Utilities.swift */; };
 		5541AA3F29DE064E00643055 /* PersonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3E29DE064E00643055 /* PersonDetailTableViewController.swift */; };
 		55FB145A29E5C22700599CC3 /* ApiPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145929E5C22700599CC3 /* ApiPersistable.swift */; };
+		55FB145C29E6FC2A00599CC3 /* RemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */; };
+		55FB145E29E7383800599CC3 /* RemotePersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */; };
+		55FB146029E73CA600599CC3 /* RemotePersonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		5541AA3929DCA2D800643055 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5541AA3E29DE064E00643055 /* PersonDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailTableViewController.swift; sourceTree = "<group>"; };
 		55FB145929E5C22700599CC3 /* ApiPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPersistable.swift; sourceTree = "<group>"; };
+		55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataManager.swift; sourceTree = "<group>"; };
+		55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePersonTableViewController.swift; sourceTree = "<group>"; };
+		55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePersonDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,8 @@
 			children = (
 				5541AA2329DA4B1500643055 /* PersonTableViewController.swift */,
 				5541AA3E29DE064E00643055 /* PersonDetailTableViewController.swift */,
+				55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */,
+				55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,6 +139,7 @@
 				5541AA3729DCA09D00643055 /* PlistPersistable.swift */,
 				5541AA3929DCA2D800643055 /* Utilities.swift */,
 				55FB145929E5C22700599CC3 /* ApiPersistable.swift */,
+				55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -211,8 +220,10 @@
 				5541AA0129D9EC3E00643055 /* AppDelegate.swift in Sources */,
 				5541AA1929D9F00000643055 /* Person.swift in Sources */,
 				5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */,
+				55FB146029E73CA600599CC3 /* RemotePersonDetailTableViewController.swift in Sources */,
 				5541AA0329D9EC3E00643055 /* SceneDelegate.swift in Sources */,
 				5541AA1B29D9F15000643055 /* Address.swift in Sources */,
+				55FB145C29E6FC2A00599CC3 /* RemoteDataManager.swift in Sources */,
 				5541AA3429DB9D4200643055 /* DataManager.swift in Sources */,
 				55FB145A29E5C22700599CC3 /* ApiPersistable.swift in Sources */,
 				5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */,
@@ -220,6 +231,7 @@
 				5541AA3229DB975500643055 /* Persistable.swift in Sources */,
 				5541AA3F29DE064E00643055 /* PersonDetailTableViewController.swift in Sources */,
 				5541AA1D29D9F19800643055 /* PhoneNumber.swift in Sources */,
+				55FB145E29E7383800599CC3 /* RemotePersonTableViewController.swift in Sources */,
 				5541AA2429DA4B1500643055 /* PersonTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

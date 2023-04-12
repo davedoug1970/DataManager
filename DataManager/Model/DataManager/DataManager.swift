@@ -9,7 +9,6 @@ import Foundation
 
 class DataManager<Entity: Codable & Identifiable> {
     private var data: [Entity] = []
-    private var dataUpdates: [Entity.ID: ChangeType] = [:]
     private var persistanceStrategy: Persistable
     private var readonly: Bool
     
@@ -33,7 +32,6 @@ class DataManager<Entity: Codable & Identifiable> {
     func update(item: Entity) -> Bool {
         if let i = data.firstIndex(where: { $0.id == item.id }) {
             data[i] = item
-            addChange(id: item.id, type: .update)
             return save()
         }
         return false
@@ -42,7 +40,6 @@ class DataManager<Entity: Codable & Identifiable> {
     func delete(id: Entity.ID) -> Bool {
         if let i = data.firstIndex(where: { $0.id == id }) {
             data.remove(at: i)
-            addChange(id: id, type: .delete)
             return save()
         }
         return false
@@ -50,40 +47,11 @@ class DataManager<Entity: Codable & Identifiable> {
     
     func add(item: Entity) -> Bool {
         data.append(item)
-        addChange(id: item.id, type: .add)
         return save()
     }
     
-    private func addChange(id: Entity.ID, type: ChangeType) {
-        switch type {
-        case .add:
-            dataUpdates[id] = type
-        case .update:
-            if dataUpdates.contains(where: { $0.key == id }) {
-                if dataUpdates[id] != .add {
-                    dataUpdates[id] = type
-                }
-            } else {
-                dataUpdates[id] = type
-            }
-        case .delete:
-            dataUpdates[id] = type
-        }
-    }
-    
     private func save() -> Bool {
-        let success = persistanceStrategy.save(data: data, dataUpdates: dataUpdates, readonly: readonly)
-        
-        if success {
-            dataUpdates = [:]
-        }
-        
-        return success
+        return persistanceStrategy.save(data: data, readonly: readonly)
     }
 }
 
-enum ChangeType: String {
-    case update
-    case add
-    case delete
-}

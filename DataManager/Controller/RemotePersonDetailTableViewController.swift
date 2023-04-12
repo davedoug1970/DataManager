@@ -1,14 +1,13 @@
 //
-//  PersonDetailTableViewController.swift
+//  RemotePersonDetailTableViewController.swift
 //  DataManager
 //
-//  Created by David Douglas on 4/5/23.
+//  Created by David Douglas on 4/12/23.
 //
 
 import UIKit
 
-class PersonDetailTableViewController: UITableViewController {
-    
+class RemotePersonDetailTableViewController: UITableViewController {
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var genderTextField: UITextField!
@@ -48,9 +47,9 @@ class PersonDetailTableViewController: UITableViewController {
             phoneTypeTextField.text = editPerson.phoneNumbers[0].type.rawValue
             phoneNumberTextField.text = editPerson.phoneNumbers[0].number
             
-            title = "Edit Person (local)"
+            title = "Edit Person (remote)"
         } else {
-            title = "Add Person (local)"
+            title = "Add Person (remote)"
         }
     }
 

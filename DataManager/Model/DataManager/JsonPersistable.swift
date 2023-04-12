@@ -8,7 +8,6 @@
 import Foundation
 
 class JsonPersistable: Persistable {
-
     func load<Entity:Codable>(readonly: Bool) -> [Entity] {
         let fileName = String(describing: Entity.self).lowercased()
         var fileLocation = Bundle.main.url(forResource: fileName, withExtension: "json")!
@@ -48,7 +47,7 @@ class JsonPersistable: Persistable {
         return []
     }
     
-    func save<Entity:Codable & Identifiable>(data: [Entity], dataUpdates: [Entity.ID: ChangeType], readonly: Bool) -> Bool {
+    func save<Entity:Codable & Identifiable>(data: [Entity], readonly: Bool) -> Bool {
         if readonly {
             return true
         }

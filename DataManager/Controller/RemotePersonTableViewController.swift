@@ -1,18 +1,31 @@
 //
-//  PersonTableViewController.swift
+//  RemotePersonTableViewController.swift
 //  DataManager
 //
-//  Created by David Douglas on 4/2/23.
+//  Created by David Douglas on 4/12/23.
 //
 
 import UIKit
 
-class PersonTableViewController: UITableViewController {
-    let dataManager = DataManager<Person>(persistanceStrategy: JsonPersistable(), readonly: false)
+class RemotePersonTableViewController: UITableViewController {
+    let dataManager = RemoteDataManager<Person>(baseURL: "http://localhost:3001/person/", fetchAllEndPoint: "all", fetchEndPoint: "get/", addEndPoint: "save", updateEndPoint: "save", deleteEndPoint: "remove/")
+    var people: [Person] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        dataManager.fetchItems(matching: [:], queryType: .url) { (result) in
+            switch result {
+            case .success(let peopleItems):
+                self.people = peopleItems
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -20,30 +33,30 @@ class PersonTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
-    @IBAction func unwindToPersonTableView(_ segue: UIStoryboardSegue) {
+    @IBAction func unwindToRemotePersonTableView(_ segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind",
-            let sourceViewController = segue.source as? PersonDetailTableViewController,
+            let sourceViewController = segue.source as? RemotePersonDetailTableViewController,
             let person = sourceViewController.person else { return }
         
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            if dataManager.update(item: person) {
-                tableView.reloadRows(at: [selectedIndexPath], with: .none)
-            }
+//            if dataManager.update(item: person) {
+//                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+//            }
         } else {
-            let newIndexPath = IndexPath(row: dataManager.fetch().count, section: 0)
-            if dataManager.add(item: person) {
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
-            }
+//            let newIndexPath = IndexPath(row: dataManager.fetch().count, section: 0)
+//            if dataManager.add(item: person) {
+//                tableView.insertRows(at: [newIndexPath], with: .automatic)
+//            }
         }
     }
     
-    @IBSegueAction func addEditPerson(_ coder: NSCoder, sender: Any?) -> PersonDetailTableViewController? {
+    @IBSegueAction func addEditPerson(_ coder: NSCoder, sender: Any?) -> RemotePersonDetailTableViewController? {
         if let cell = sender as? UITableViewCell,
            let indexPath = tableView.indexPath(for: cell) {
-            let personToEdit = dataManager.fetch()[indexPath.row]
-            return PersonDetailTableViewController(coder: coder, person: personToEdit)
+            let personToEdit = people[indexPath.row]
+            return RemotePersonDetailTableViewController(coder: coder, person: personToEdit)
         } else {
-            return PersonDetailTableViewController(coder: coder, person: nil)
+            return RemotePersonDetailTableViewController(coder: coder, person: nil)
         }
     }
     
@@ -54,13 +67,13 @@ class PersonTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager.fetch().count
+        return people.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
 
-        let person = dataManager.fetch()[indexPath.row]
+        let person = people[indexPath.row]
 
         cell.textLabel?.text = "\(person.firstName) \(person.lastName)"
         cell.detailTextLabel?.text = "\(person.address.streetAddress), \(person.address.city), \(person.address.state), \(person.address.postalCode)"
@@ -85,7 +98,7 @@ class PersonTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

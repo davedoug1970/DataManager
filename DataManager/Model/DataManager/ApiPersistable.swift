@@ -7,32 +7,37 @@
 
 import Foundation
 
-class ApiPersistable: Persistable {
+class ApiPersistable {
     private var baseURL: String
     private var fetchAllEndPoint: String
     private var fetchEndPoint: String
+    private var addEndPoint: String
     private var updateEndPoint: String
     private var deleteEndPoint: String
     private var entityData: [Any] = []
     
-    init(baseURL: String, fetchAllEndPoint: String, fetchEndPoint: String, updateEndPoint: String, deleteEndPoint: String) {
+    init(baseURL: String, fetchAllEndPoint: String, fetchEndPoint: String, addEndPoint: String, updateEndPoint: String, deleteEndPoint: String) {
         self.baseURL = baseURL
         self.fetchAllEndPoint = fetchAllEndPoint
         self.fetchEndPoint = fetchEndPoint
+        self.addEndPoint = addEndPoint
         self.updateEndPoint = updateEndPoint
         self.deleteEndPoint = deleteEndPoint
     }
     
     func load<Entity: Codable>(readonly: Bool) -> [Entity] {
+        // using a dispatch group to wait for retrieval of API data before exiting method...
         let group = DispatchGroup()
         group.enter()
         
+        // avoid deadlocks by not using .main queue here
         DispatchQueue.global(qos: .default).async {
             Task {
                 var returnData:[Entity] = []
                 
                 do {
                     returnData = try await self.fetchEntities()
+                    // set private attribute equal to the data that is retured...
                     self.saveData(data: returnData)
                 } catch {
                     print(error.localizedDescription)
@@ -41,20 +46,25 @@ class ApiPersistable: Persistable {
             }
         }
         
+        // wait for data to be retrieved...
         group.wait()
         
+        // use private attribute to return data fetched from API...
         return entityData as! [Entity]
     }
     
-    func save<Entity: Codable & Identifiable>(data: [Entity], dataUpdates: [Entity.ID : ChangeType], readonly: Bool) -> Bool {
+    func save<Entity: Codable & Identifiable>(data: [Entity], readonly: Bool) -> Bool {
         return false
     }
     
-    private func saveData(data: [Any]) {
+    func saveData(data: [Any]) {
         entityData = data
     }
-    
-    private func fetchEntities<Entity: Decodable>() async throws -> [Entity] {
+}
+
+// MARK: Networking
+private extension ApiPersistable {
+    func fetchEntities<Entity: Decodable>() async throws -> [Entity] {
         //create the new url
         let url = URL(string: "\(baseURL)\(fetchAllEndPoint)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
             
@@ -86,7 +96,7 @@ class ApiPersistable: Persistable {
         return []
     }
     
-    private func handleResponse(response: (data: Data, response: URLResponse)) throws -> Data {
+    func handleResponse(response: (data: Data, response: URLResponse)) throws -> Data {
         guard let httpResponse = response.response as? HTTPURLResponse else {
             return response.data
         }
