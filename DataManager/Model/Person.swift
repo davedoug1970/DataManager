@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Person: Codable, Identifiable {
+struct Person: Codable, Identifiable, Hashable {
     var id: UUID
     var firstName: String
     var lastName: String
@@ -15,6 +15,13 @@ struct Person: Codable, Identifiable {
     var age: Int
     var address: Address
     var phoneNumbers: [PhoneNumber]
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    static func == (lhs: Person, rhs: Person) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 enum Gender: String, Codable {

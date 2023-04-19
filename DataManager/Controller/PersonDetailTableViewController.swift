@@ -20,8 +20,14 @@ class PersonDetailTableViewController: UITableViewController {
     @IBOutlet var phoneTypeTextField: UITextField!
     @IBOutlet var phoneNumberTextField: UITextField!
    
+    enum ChangeType: String {
+        case add
+        case edit
+        case notset
+    }
     
     var person: Person?
+    var changeType: ChangeType = .notset
     
     init?(coder: NSCoder, person: Person?) {
         self.person = person
@@ -47,9 +53,11 @@ class PersonDetailTableViewController: UITableViewController {
             postalCodeTextField.text = editPerson.address.postalCode
             phoneTypeTextField.text = editPerson.phoneNumbers[0].type.rawValue
             phoneNumberTextField.text = editPerson.phoneNumbers[0].number
+            changeType = .edit
             
             title = "Edit Person (local)"
         } else {
+            changeType = .add
             title = "Add Person (local)"
         }
     }
