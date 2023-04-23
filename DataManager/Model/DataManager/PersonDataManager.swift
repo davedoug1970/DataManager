@@ -12,6 +12,7 @@ class PersonDataManager: SharedDataManager {
     
     static let shared = DataManager<T>(persistanceStrategy: JsonPersistable(), readonly: true)
     
+    // private init means the only way to initialize this class is through the static shared variable 
     private init() {
 
     }

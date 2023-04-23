@@ -33,7 +33,7 @@ class PlistPersistable: Persistable {
             let arrayAny = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [Any]
             // serialize the array of any objects into JSON.
             let jsonData = try JSONSerialization.data(withJSONObject: arrayAny, options: .withoutEscapingSlashes)
-            // decode the JSON into the specific entity that is being loaded.
+            // decode the JSON into the specific entity type (rather than Any type) that is being loaded.
             returnData = try JSONDecoder().decode([Entity].self, from: jsonData)
         } catch {
             print(error.localizedDescription)

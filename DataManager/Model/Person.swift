@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Hashable protocol added to support diffable datasource
 struct Person: Codable, Identifiable, Hashable {
     var id: UUID
     var firstName: String
@@ -19,6 +20,7 @@ struct Person: Codable, Identifiable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+    
     static func == (lhs: Person, rhs: Person) -> Bool {
         return lhs.id == rhs.id
     }

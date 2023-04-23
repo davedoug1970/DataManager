@@ -24,6 +24,7 @@
 		5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3729DCA09D00643055 /* PlistPersistable.swift */; };
 		5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3929DCA2D800643055 /* Utilities.swift */; };
 		5541AA3F29DE064E00643055 /* PersonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3E29DE064E00643055 /* PersonDetailTableViewController.swift */; };
+		55F8B91229F5C3FA000C48D0 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 55F8B91129F5C3FA000C48D0 /* LICENSE.md */; };
 		55FB145C29E6FC2A00599CC3 /* RemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */; };
 		55FB145E29E7383800599CC3 /* RemotePersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */; };
 		55FB146029E73CA600599CC3 /* RemotePersonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */; };
@@ -51,6 +52,7 @@
 		5541AA3729DCA09D00643055 /* PlistPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistPersistable.swift; sourceTree = "<group>"; };
 		5541AA3929DCA2D800643055 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5541AA3E29DE064E00643055 /* PersonDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailTableViewController.swift; sourceTree = "<group>"; };
+		55F8B91129F5C3FA000C48D0 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataManager.swift; sourceTree = "<group>"; };
 		55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePersonTableViewController.swift; sourceTree = "<group>"; };
 		55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePersonDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				5541AA0929D9EC3F00643055 /* Assets.xcassets */,
 				5541AA0B29D9EC3F00643055 /* LaunchScreen.storyboard */,
 				5541AA0E29D9EC3F00643055 /* Info.plist */,
+				55F8B91129F5C3FA000C48D0 /* LICENSE.md */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				5541AA0D29D9EC3F00643055 /* LaunchScreen.storyboard in Resources */,
 				5541AA3629DC66C700643055 /* person.plist in Resources */,
 				5541AA0A29D9EC3F00643055 /* Assets.xcassets in Resources */,
+				55F8B91229F5C3FA000C48D0 /* LICENSE.md in Resources */,
 				5541AA0829D9EC3E00643055 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

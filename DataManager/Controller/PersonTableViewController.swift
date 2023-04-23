@@ -35,7 +35,7 @@ class PersonTableViewController: UITableViewController {
             }
         } else {
             if PersonDataManager.shared.add(item: person) {
-                dataSource.apply(createSnapshot(), animatingDifferences: true)
+                dataSource.apply(updateSnapshot(person: person), animatingDifferences: true)
             }
         }
     }
@@ -70,7 +70,12 @@ class PersonTableViewController: UITableViewController {
         var snapshot = NSDiffableDataSourceSnapshot<Section,Person>()
         snapshot.appendSections([.main])
         snapshot.appendItems(PersonDataManager.shared.fetch())
-        
+        return snapshot
+    }
+    
+    func updateSnapshot(person: Person) -> NSDiffableDataSourceSnapshot<Section, Person> {
+        var snapshot = dataSource.snapshot()
+        snapshot.appendItems([person], toSection: .main)
         return snapshot
     }
 }

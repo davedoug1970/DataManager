@@ -8,7 +8,7 @@
 import UIKit
 
 class RemotePersonTableViewController: UITableViewController {
-    let dataManager = RemoteDataManager<Person>(baseURL: "http://localhost:3001/person/", fetchAllEndPoint: "all", fetchEndPoint: "get/", addEndPoint: "save", updateEndPoint: "save", deleteEndPoint: "remove/")
+    let dataManager = RemoteDataManager<Person>(baseURL: "http://localhost:3001/person/", fetchAllEndPoint: "all", fetchEndPoint: "get/", addEndPoint: "add", updateEndPoint: "update", deleteEndPoint: "remove/")
     var people: [Person] = []
     
     
@@ -39,14 +39,44 @@ class RemotePersonTableViewController: UITableViewController {
             let person = sourceViewController.person else { return }
         
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
-//            if dataManager.update(item: person) {
-//                tableView.reloadRows(at: [selectedIndexPath], with: .none)
-//            }
+            dataManager.updateItem(item: person) { (result) in
+                switch result {
+                case .success(let success):
+                    if success {
+                        if let replacementSub = self.people.firstIndex(of: person) {
+                            self.people[replacementSub] = person
+                            DispatchQueue.main.async {
+                                self.tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                            }
+                            print("record updated successfully")
+                        } else {
+                            print("there was an issue updating the record")
+                        }
+                    } else {
+                        print("there was an issue updating the record")
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         } else {
-//            let newIndexPath = IndexPath(row: dataManager.fetch().count, section: 0)
-//            if dataManager.add(item: person) {
-//                tableView.insertRows(at: [newIndexPath], with: .automatic)
-//            }
+            dataManager.addItem(item: person) { (result) in
+                switch result {
+                case .success(let success):
+                    if success {
+                        let newIndexPath = IndexPath(row: self.people.count, section: 0)
+                        self.people.append(person)
+                        DispatchQueue.main.async {
+                            self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+                        }
+                        print("record added successfully")
+                    } else {
+                        print("there was an issue adding the record")
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
     

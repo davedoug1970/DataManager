@@ -25,16 +25,7 @@ class RemoteDataManager<Entity: Codable & Identifiable> {
     }
     
     func fetchItem(matching query: [String: String], queryType: QueryType, completion: @escaping (Result<Entity, Error>) -> Void) {
-        var urlComponents = URLComponents()
-
-        if queryType == .querystring {
-            urlComponents = URLComponents(string: "\(baseURL)\(fetchEndPoint)")!
-            urlComponents.queryItems = query.map({ URLQueryItem(name: $0.key, value: $0.value) })
-        } else {
-            urlComponents = URLComponents(string: "\(baseURL)\(fetchEndPoint)\(formatParameters(parameters: query))")!
-        }
-        
-        let task = URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: formatFetchURL(query: query, queryType: queryType).url!) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
             } else if let data = data {
@@ -52,20 +43,7 @@ class RemoteDataManager<Entity: Codable & Identifiable> {
     }
     
     func fetchItems(matching query: [String: String], queryType: QueryType, completion: @escaping (Result<[Entity], Error>) -> Void) {
-        var urlComponents = URLComponents()
-        
-        if query.count > 0 {
-            if queryType == .querystring {
-                urlComponents = URLComponents(string: "\(baseURL)\(fetchEndPoint)")!
-                urlComponents.queryItems = query.map({ URLQueryItem(name: $0.key, value: $0.value) })
-            } else {
-                urlComponents = URLComponents(string: "\(baseURL)\(fetchEndPoint)\(formatParameters(parameters: query))")!
-            }
-        } else {
-            urlComponents = URLComponents(string: "\(baseURL)\(fetchAllEndPoint)")!
-        }
-        
-        let task = URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: formatFetchURL(query: query, queryType: queryType).url!) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
             } else if let data = data {
@@ -81,9 +59,96 @@ class RemoteDataManager<Entity: Codable & Identifiable> {
         
         task.resume()
     }
+    
+    func addItem(item: Entity, completion: @escaping (Result<Bool, Error>) -> Void) {
+        let url = URL(string: "\(baseURL)\(addEndPoint)")
+        
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let encoded = try? JSONEncoder().encode(item) {
+            let task = URLSession.shared.uploadTask(with: request, from: encoded) { (data, response, error) in
+                if let error = error {
+                    completion(.failure(error))
+                } else if let response = response as? HTTPURLResponse {
+                    if response.statusCode < 300 {
+                        completion(.success(true))
+                    } else {
+                        completion(.success(false))
+                    }
+                }
+            }
+            
+            task.resume()
+        }
+    }
+    
+    func updateItem(item: Entity, completion: @escaping (Result<Bool, Error>) -> Void) {
+        let url = URL(string: "\(baseURL)\(updateEndPoint)")
+        
+        var request = URLRequest(url: url!)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let encoded = try? JSONEncoder().encode(item) {
+            let task = URLSession.shared.uploadTask(with: request, from: encoded) { (data, response, error) in
+                if let error = error {
+                    completion(.failure(error))
+                } else if let response = response as? HTTPURLResponse {
+                    if response.statusCode < 300 {
+                        completion(.success(true))
+                    } else {
+                        completion(.success(false))
+                    }
+                }
+            }
+            
+            task.resume()
+        }
+    }
+ 
+    func deleteItem(id: Entity.ID, completion: @escaping (Result<Bool, Error>) -> Void) {
+        let url = URL(string: "\(baseURL)\(deleteEndPoint)\(id)")
+        
+        var request = URLRequest(url: url!)
+        request.httpMethod = "DELETE"
+        //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      
+        let task = URLSession.shared.uploadTask(with: request, from: nil) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let response = response as? HTTPURLResponse {
+                if response.statusCode < 300 {
+                    completion(.success(true))
+                } else {
+                    completion(.success(false))
+                }
+            }
+        }
+        
+        task.resume()
+    }
 }
 
 private extension RemoteDataManager {
+    func formatFetchURL(query: [String: String], queryType: QueryType) -> URLComponents {
+        var urlComponents = URLComponents()
+        
+        if query.count > 0 {
+            if queryType == .querystring {
+                urlComponents = URLComponents(string: "\(baseURL)\(fetchEndPoint)")!
+                urlComponents.queryItems = query.map({ URLQueryItem(name: $0.key, value: $0.value) })
+            } else {
+                urlComponents = URLComponents(string: "\(baseURL)\(fetchEndPoint)\(formatParameters(parameters: query))")!
+            }
+        } else {
+            urlComponents = URLComponents(string: "\(baseURL)\(fetchAllEndPoint)")!
+        }
+        
+        return urlComponents
+    }
+    
     func formatParameters(parameters: [String: String]) -> String {
         var queryParameters = ""
         
