@@ -116,10 +116,12 @@
 		5541AA1729D9EFEF00643055 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55FB146329E851A500599CC3 /* PersonDataManager.swift */,
 				5541AA1829D9F00000643055 /* Person.swift */,
 				5541AA1A29D9F15000643055 /* Address.swift */,
 				5541AA1C29D9F19800643055 /* PhoneNumber.swift */,
 				5541AA3D29DDCB9600643055 /* DataManager */,
+				55F8B91529F5C685000C48D0 /* RemoteDataManager */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,11 +145,17 @@
 				5541AA3329DB9D4200643055 /* DataManager.swift */,
 				5541AA3729DCA09D00643055 /* PlistPersistable.swift */,
 				5541AA3929DCA2D800643055 /* Utilities.swift */,
-				55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */,
 				55FB146129E84F2300599CC3 /* SharedDataManager.swift */,
-				55FB146329E851A500599CC3 /* PersonDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		55F8B91529F5C685000C48D0 /* RemoteDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */,
+			);
+			path = RemoteDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
