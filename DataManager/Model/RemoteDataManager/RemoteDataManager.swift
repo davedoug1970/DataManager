@@ -4,6 +4,8 @@
 //
 //  Created by David Douglas on 4/12/23.
 //
+//  This class uses a companion docker image that can be retrieved here:
+//  https://hub.docker.com/repository/docker/davedoug1970/personapi/general
 
 import Foundation
 
