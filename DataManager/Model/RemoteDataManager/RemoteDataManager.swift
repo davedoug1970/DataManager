@@ -115,9 +115,8 @@ class RemoteDataManager<Entity: Codable & Identifiable> {
         
         var request = URLRequest(url: url!)
         request.httpMethod = "DELETE"
-        //request.setValue("application/json", forHTTPHeaderField: "Content-Type")
       
-        let task = URLSession.shared.uploadTask(with: request, from: nil) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
             } else if let response = response as? HTTPURLResponse {
