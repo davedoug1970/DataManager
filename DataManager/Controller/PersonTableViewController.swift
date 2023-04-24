@@ -12,7 +12,28 @@ class PersonTableViewController: UITableViewController {
         case main
     }
 
-    var dataSource: UITableViewDiffableDataSource<Section,Person>!
+    // Subclassing our data source to supply various UITableViewDataSource methods
+    class DataSource: UITableViewDiffableDataSource<Section, Person> {
+        // MARK: editing support
+
+        override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+            return true
+        }
+
+        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                if let identifierToDelete = itemIdentifier(for: indexPath) {
+                    if PersonDataManager.shared.delete(id: identifierToDelete.id) {
+                        var snapshot = self.snapshot()
+                        snapshot.deleteItems([identifierToDelete])
+                        apply(snapshot)
+                    }
+                }
+            }
+        }
+    }
+    
+    var dataSource: DataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +74,7 @@ class PersonTableViewController: UITableViewController {
     // MARK: - Configure Data Source
     
     func configureDataSource() {
-        dataSource = UITableViewDiffableDataSource(tableView: tableView) { (tableView, indexPath, person) -> UITableViewCell? in
+        dataSource = DataSource(tableView: tableView) { (tableView, indexPath, person) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
             cell.textLabel?.text = "\(person.firstName) \(person.lastName)"
             cell.detailTextLabel?.text = "\(person.address.streetAddress), \(person.address.city), \(person.address.state), \(person.address.postalCode)"
