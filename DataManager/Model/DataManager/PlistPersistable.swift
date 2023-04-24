@@ -29,7 +29,7 @@ class PlistPersistable: Persistable {
         do {
             // load data from plist file.
             let data = try Data(contentsOf: fileLocation)
-            // convert raw plist data into an array of any objects.
+            // convert raw plist data into an array of any objects. Unable to cast to Entity type.
             let arrayAny = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [Any]
             // serialize the array of any objects into JSON.
             let jsonData = try JSONSerialization.data(withJSONObject: arrayAny, options: .withoutEscapingSlashes)
