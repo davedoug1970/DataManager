@@ -22,8 +22,11 @@ class PersonTableViewController: UITableViewController {
 
         override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
+                // determine which record needs to be deleted.
                 if let identifierToDelete = itemIdentifier(for: indexPath) {
+                    // remove that record from your source of the data
                     if PersonDataManager.shared.delete(id: identifierToDelete.id) {
+                        // if that is successful, remove the record from the uitableview's source of data.
                         var snapshot = self.snapshot()
                         snapshot.deleteItems([identifierToDelete])
                         apply(snapshot)
@@ -47,11 +50,15 @@ class PersonTableViewController: UITableViewController {
             let person = sourceViewController.person else { return }
         
         if sourceViewController.changeType == .edit {
+            // update the record in your source of data
             if PersonDataManager.shared.update(item: person) {
+                // if that is succesful, update the record in the uitableview's source of data
                 dataSource.applySnapshotUsingReloadData(createSnapshot())
             }
         } else {
+            // add the new record to your source of data
             if PersonDataManager.shared.add(item: person) {
+                // if that is successful, add the record to the uitableview's source of data
                 dataSource.apply(updateSnapshot(person: person), animatingDifferences: true)
             }
         }
