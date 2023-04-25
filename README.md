@@ -1,7 +1,7 @@
 
 ## DataManager
 
-DataManager is meant to be my attempt at creating a generics based set of protocols and classes that allow you to use an entity class/struct that you have created and store data in a json or plist file.  I am always open to suggestions on how I can improve it.
+DataManager is a generics based set of protocols and classes that allow you to use an entity class/struct that you have created and store data in a json or plist file.  I am always open to suggestions on how I can improve it.
 
 ## Problem Statement
 
