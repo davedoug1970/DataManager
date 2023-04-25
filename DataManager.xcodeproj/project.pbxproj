@@ -78,6 +78,8 @@
 		5541A9F429D9EC3E00643055 = {
 			isa = PBXGroup;
 			children = (
+				55F8B91A29F82933000C48D0 /* README.md */,
+				55F8B91C29F8293C000C48D0 /* diagram.png */,
 				5541A9FF29D9EC3E00643055 /* DataManager */,
 				5541A9FE29D9EC3E00643055 /* Products */,
 			);
@@ -104,8 +106,6 @@
 				5541AA0B29D9EC3F00643055 /* LaunchScreen.storyboard */,
 				5541AA0E29D9EC3F00643055 /* Info.plist */,
 				55F8B91129F5C3FA000C48D0 /* LICENSE.md */,
-				55F8B91A29F82933000C48D0 /* README.md */,
-				55F8B91C29F8293C000C48D0 /* diagram.png */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
