@@ -27,8 +27,11 @@ struct Person: Codable, Identifiable, Hashable {
 }
 
 enum Gender: String, Codable {
-   case male
-   case female
+    case male
+    case female
+    case transgender
+    case nonBinaryNonConforming
+    case noResponse
 }
 
 
