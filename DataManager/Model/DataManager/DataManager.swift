@@ -18,7 +18,7 @@ class DataManager<Entity: Codable & Identifiable> {
         data = self.persistanceStrategy.load(readonly: self.readonly)
     }
     
-    func fetch() -> [Entity] {
+    public func fetch() -> [Entity] {
         return data
     }
     
@@ -45,7 +45,7 @@ class DataManager<Entity: Codable & Identifiable> {
         return false
     }
     
-    func add(item: Entity) -> Bool {
+    public func add(item: Entity) -> Bool {
         data.append(item)
         return save()
     }

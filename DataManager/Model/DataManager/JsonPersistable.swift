@@ -9,23 +9,16 @@ import Foundation
 
 class JsonPersistable: Persistable {
     func load<Entity:Codable>(readonly: Bool) -> [Entity] {
-        let fileName = String(describing: Entity.self).lowercased()
-        var fileLocation = Bundle.main.url(forResource: fileName, withExtension: "json")!
-    
-        if !readonly {
-            fileLocation = Utilities.getDocumentsDirectory().appendingPathComponent("\(fileName).json")
-            
-            let fileExists = FileManager.default.fileExists(atPath: fileLocation.path())
-            
-            // if we have not written first file to documents directory then load data from json file
-            // included in the app bundle
-            if !fileExists {
-                fileLocation = Bundle.main.url(forResource: fileName, withExtension: "json")!
-            }
+        let fileInfo = Utilities.getFileLocation(fileName: String(describing: Entity.self).lowercased(),
+                                                 withExtension: "json", readonly: readonly)
+        
+        // if unable to find the file, it probably doesnt exist in the bundle, so just return an empty array.
+        if !fileInfo.exists {
+            return []
         }
 
         do {
-            let data = try Data(contentsOf: fileLocation)
+            let data = try Data(contentsOf: fileInfo.fileLocation!)
             let returnData = try JSONDecoder().decode([Entity].self, from: data)
 
             return returnData

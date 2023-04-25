@@ -40,7 +40,7 @@ class PersonDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let editPerson = person {
             // set text fields here...
             firstNameTextField.text = editPerson.firstName
@@ -76,7 +76,7 @@ class PersonDetailTableViewController: UITableViewController {
             person!.firstName = firstNameTextField.text!
             person!.lastName = lastNameTextField.text!
             
-            switch genderTextField.text! {
+            switch genderTextField.text!.lowercased() {
             case "male":
                 person!.gender = .male
             case "female":
@@ -91,7 +91,7 @@ class PersonDetailTableViewController: UITableViewController {
             person!.address.state = stateTextField.text!
             person!.address.postalCode = postalCodeTextField.text!
             
-            switch phoneTypeTextField.text! {
+            switch phoneTypeTextField.text!.lowercased() {
             case "home":
                 person!.phoneNumbers[0].type = .home
             case "work":
@@ -104,7 +104,7 @@ class PersonDetailTableViewController: UITableViewController {
         } else {
             var gender: Gender = .male
             
-            if genderTextField.text! == "female" {
+            if genderTextField.text!.lowercased() == "female" {
                 gender = .female
             }
             
@@ -112,7 +112,7 @@ class PersonDetailTableViewController: UITableViewController {
             
             var phoneType: PhoneType = .home
             
-            if phoneTypeTextField.text! == "work" {
+            if phoneTypeTextField.text!.lowercased() == "work" {
                 phoneType = .work
             }
             

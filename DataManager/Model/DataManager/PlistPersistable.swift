@@ -9,37 +9,29 @@ import Foundation
 
 class PlistPersistable: Persistable {
     func load<Entity: Codable>(readonly: Bool) -> [Entity] {
-        let fileName = String(describing: Entity.self).lowercased()
-        var fileLocation = Bundle.main.url(forResource: fileName, withExtension: "plist")!
-    
-        if !readonly {
-            fileLocation = Utilities.getDocumentsDirectory().appendingPathComponent("\(fileName).plist")
-            
-            let fileExists = FileManager.default.fileExists(atPath: fileLocation.path())
-            
-            // if we have not written first file to documents directory then load data from json file
-            // included in the app bundle
-            if !fileExists {
-                fileLocation = Bundle.main.url(forResource: fileName, withExtension: "plist")!
-            }
-        }
- 
-        var returnData:[Entity] = []
+        let fileInfo = Utilities.getFileLocation(fileName: String(describing: Entity.self).lowercased(),
+                                                 withExtension: "plist", readonly: readonly)
         
+        // if unable to find the file, it probably doesnt exist in the bundle, so just return an empty array.
+        if !fileInfo.exists {
+            return []
+        }
+
         do {
             // load data from plist file.
-            let data = try Data(contentsOf: fileLocation)
+            let data = try Data(contentsOf: fileInfo.fileLocation!)
             // convert raw plist data into an array of any objects. Unable to cast to Entity type.
             let arrayAny = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [Any]
             // serialize the array of any objects into JSON.
             let jsonData = try JSONSerialization.data(withJSONObject: arrayAny, options: .withoutEscapingSlashes)
             // decode the JSON into the specific entity type (rather than Any type) that is being loaded.
-            returnData = try JSONDecoder().decode([Entity].self, from: jsonData)
+            let returnData = try JSONDecoder().decode([Entity].self, from: jsonData)
+            return returnData
         } catch {
             print(error.localizedDescription)
         }
 
-        return returnData
+        return []
     }
     
     func save<Entity: Codable & Identifiable>(data: [Entity], readonly: Bool) -> Bool {

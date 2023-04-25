@@ -40,10 +40,6 @@ class PersonTableViewController: UITableViewController {
         
         configureDataSource()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
 
     @IBAction func unwindToPersonTableView(_ segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind",
