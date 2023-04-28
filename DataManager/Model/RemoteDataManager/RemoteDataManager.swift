@@ -6,6 +6,7 @@
 //
 //  This class uses a companion docker image that can be retrieved here:
 //  https://hub.docker.com/r/davedoug1970/swiftpersonapi
+//  source code is here: https://github.com/davedoug1970/swift-person-api
 
 import Foundation
 
