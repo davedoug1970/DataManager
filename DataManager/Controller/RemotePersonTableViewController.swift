@@ -4,11 +4,13 @@
 //
 //  Created by David Douglas on 4/12/23.
 //
+//  This class uses a companion docker image that can be retrieved here:
+//  https://hub.docker.com/r/davedoug1970/swiftpersonapi
 
 import UIKit
 
 class RemotePersonTableViewController: UITableViewController {
-    let dataManager = RemoteDataManager<Person>(baseURL: "http://localhost:3001/person/", fetchAllEndPoint: "all", fetchEndPoint: "get/", addEndPoint: "add", updateEndPoint: "update", deleteEndPoint: "remove/")
+    let dataManager = RemoteDataManager<Person>(baseURL: "http://localhost:8080/api/v1/persons", fetchAllEndPoint: "", fetchEndPoint: "/", addEndPoint: "/add", updateEndPoint: "/update", deleteEndPoint: "/delete/")
     var people: [Person] = []
     
     
