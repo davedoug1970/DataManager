@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PersonCD" representedClassName=".PersonCD" syncable="YES">
+        <attribute name="age" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="firstName" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="lastName" attributeType="String"/>
+        <attribute name="postalCode" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <attribute name="streetAddress" optional="YES" attributeType="String"/>
+        <relationship name="personToPhoneNumber" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PhoneNumberCD" inverseName="phoneNumberToPerson" inverseEntity="PhoneNumberCD"/>
+    </entity>
+    <entity name="PhoneNumberCD" representedClassName=".PhoneNumberCD" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="phoneNumberToPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonCD" inverseName="personToPhoneNumber" inverseEntity="PersonCD"/>
+    </entity>
+</model>

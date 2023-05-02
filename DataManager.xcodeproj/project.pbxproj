@@ -27,6 +27,13 @@
 		55F8B91229F5C3FA000C48D0 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 55F8B91129F5C3FA000C48D0 /* LICENSE.md */; };
 		55F8B91B29F82933000C48D0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55F8B91A29F82933000C48D0 /* README.md */; };
 		55F8B91D29F8293C000C48D0 /* diagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 55F8B91C29F8293C000C48D0 /* diagram.png */; };
+		55F8B97C2A019148000C48D0 /* PersonModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55F8B97A2A019148000C48D0 /* PersonModel.xcdatamodeld */; };
+		55F8B99D2A019FFD000C48D0 /* PhoneNumberCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8B9992A019FFD000C48D0 /* PhoneNumberCD+CoreDataClass.swift */; };
+		55F8B99E2A019FFD000C48D0 /* PhoneNumberCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8B99A2A019FFD000C48D0 /* PhoneNumberCD+CoreDataProperties.swift */; };
+		55F8B99F2A019FFD000C48D0 /* PersonCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8B99B2A019FFD000C48D0 /* PersonCD+CoreDataClass.swift */; };
+		55F8B9A02A019FFD000C48D0 /* PersonCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8B99C2A019FFD000C48D0 /* PersonCD+CoreDataProperties.swift */; };
+		55F8B9A22A01A2F7000C48D0 /* PersonCoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8B9A12A01A2F7000C48D0 /* PersonCoreDataTableViewController.swift */; };
+		55F8B9C72A01ABBD000C48D0 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8B9C62A01ABBD000C48D0 /* DataLoader.swift */; };
 		55FB145C29E6FC2A00599CC3 /* RemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */; };
 		55FB145E29E7383800599CC3 /* RemotePersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */; };
 		55FB146029E73CA600599CC3 /* RemotePersonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */; };
@@ -57,6 +64,13 @@
 		55F8B91129F5C3FA000C48D0 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		55F8B91A29F82933000C48D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		55F8B91C29F8293C000C48D0 /* diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diagram.png; sourceTree = "<group>"; };
+		55F8B97B2A019148000C48D0 /* PersonModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonModel.xcdatamodel; sourceTree = "<group>"; };
+		55F8B9992A019FFD000C48D0 /* PhoneNumberCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhoneNumberCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55F8B99A2A019FFD000C48D0 /* PhoneNumberCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhoneNumberCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		55F8B99B2A019FFD000C48D0 /* PersonCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55F8B99C2A019FFD000C48D0 /* PersonCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		55F8B9A12A01A2F7000C48D0 /* PersonCoreDataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCoreDataTableViewController.swift; sourceTree = "<group>"; };
+		55F8B9C62A01ABBD000C48D0 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataManager.swift; sourceTree = "<group>"; };
 		55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePersonTableViewController.swift; sourceTree = "<group>"; };
 		55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePersonDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +136,7 @@
 		5541AA1729D9EFEF00643055 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55F8B9792A019123000C48D0 /* CoreData */,
 				55FB146329E851A500599CC3 /* PersonDataManager.swift */,
 				5541AA1829D9F00000643055 /* Person.swift */,
 				5541AA1A29D9F15000643055 /* Address.swift */,
@@ -139,6 +154,7 @@
 				5541AA3E29DE064E00643055 /* PersonDetailTableViewController.swift */,
 				55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */,
 				55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */,
+				55F8B9A12A01A2F7000C48D0 /* PersonCoreDataTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +178,19 @@
 				55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */,
 			);
 			path = RemoteDataManager;
+			sourceTree = "<group>";
+		};
+		55F8B9792A019123000C48D0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				55F8B9992A019FFD000C48D0 /* PhoneNumberCD+CoreDataClass.swift */,
+				55F8B99A2A019FFD000C48D0 /* PhoneNumberCD+CoreDataProperties.swift */,
+				55F8B99B2A019FFD000C48D0 /* PersonCD+CoreDataClass.swift */,
+				55F8B99C2A019FFD000C48D0 /* PersonCD+CoreDataProperties.swift */,
+				55F8B97A2A019148000C48D0 /* PersonModel.xcdatamodeld */,
+				55F8B9C62A01ABBD000C48D0 /* DataLoader.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,11 +272,16 @@
 				5541AA0129D9EC3E00643055 /* AppDelegate.swift in Sources */,
 				5541AA1929D9F00000643055 /* Person.swift in Sources */,
 				5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */,
+				55F8B9A22A01A2F7000C48D0 /* PersonCoreDataTableViewController.swift in Sources */,
+				55F8B99F2A019FFD000C48D0 /* PersonCD+CoreDataClass.swift in Sources */,
 				55FB146029E73CA600599CC3 /* RemotePersonDetailTableViewController.swift in Sources */,
 				55FB146429E851A500599CC3 /* PersonDataManager.swift in Sources */,
+				55F8B99D2A019FFD000C48D0 /* PhoneNumberCD+CoreDataClass.swift in Sources */,
 				5541AA0329D9EC3E00643055 /* SceneDelegate.swift in Sources */,
+				55F8B97C2A019148000C48D0 /* PersonModel.xcdatamodeld in Sources */,
 				5541AA1B29D9F15000643055 /* Address.swift in Sources */,
 				55FB145C29E6FC2A00599CC3 /* RemoteDataManager.swift in Sources */,
+				55F8B9A02A019FFD000C48D0 /* PersonCD+CoreDataProperties.swift in Sources */,
 				5541AA3429DB9D4200643055 /* DataManager.swift in Sources */,
 				5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */,
 				5541AA2E29DB703400643055 /* JsonPersistable.swift in Sources */,
@@ -255,7 +289,9 @@
 				5541AA3F29DE064E00643055 /* PersonDetailTableViewController.swift in Sources */,
 				5541AA1D29D9F19800643055 /* PhoneNumber.swift in Sources */,
 				55FB145E29E7383800599CC3 /* RemotePersonTableViewController.swift in Sources */,
+				55F8B9C72A01ABBD000C48D0 /* DataLoader.swift in Sources */,
 				55FB146229E84F2300599CC3 /* SharedDataManager.swift in Sources */,
+				55F8B99E2A019FFD000C48D0 /* PhoneNumberCD+CoreDataProperties.swift in Sources */,
 				5541AA2429DA4B1500643055 /* PersonTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		55F8B97A2A019148000C48D0 /* PersonModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				55F8B97B2A019148000C48D0 /* PersonModel.xcdatamodel */,
+			);
+			currentVersion = 55F8B97B2A019148000C48D0 /* PersonModel.xcdatamodel */;
+			path = PersonModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5541A9F529D9EC3E00643055 /* Project object */;
 }
