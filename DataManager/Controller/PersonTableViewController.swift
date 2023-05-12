@@ -93,6 +93,11 @@ class PersonTableViewController: UITableViewController {
     func createSnapshot() -> NSDiffableDataSourceSnapshot<Section, Person> {
         var snapshot = NSDiffableDataSourceSnapshot<Section,Person>()
         snapshot.appendSections([.main])
+        
+        // First use of datamanager here will cause it to load all data from file.
+        // The file will either be in the bundle or the documents directory depending on how
+        // the datamanager is configured.
+        
         snapshot.appendItems(PersonDataManager.shared.fetch())
         return snapshot
     }
