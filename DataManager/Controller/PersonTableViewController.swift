@@ -46,7 +46,7 @@ class PersonTableViewController: UITableViewController {
 
     @IBAction func unwindToPersonTableView(_ segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind",
-            let sourceViewController = segue.source as? PersonDetailTableViewController,
+            let sourceViewController = segue.source as? PersonDetailViewController,
             let person = sourceViewController.person else { return }
         
         if sourceViewController.changeType == .edit {
@@ -63,14 +63,14 @@ class PersonTableViewController: UITableViewController {
             }
         }
     }
-    
-    @IBSegueAction func addEditPerson(_ coder: NSCoder, sender: Any?) -> PersonDetailTableViewController? {
+
+    @IBSegueAction func addEditPerson(_ coder: NSCoder, sender: Any?) -> PersonDetailViewController? {
         if let cell = sender as? UITableViewCell,
            let indexPath = tableView.indexPath(for: cell) {
             let personToEdit = PersonDataManager.shared.fetch()[indexPath.row]
-            return PersonDetailTableViewController(coder: coder, person: personToEdit)
+            return PersonDetailViewController(coder: coder, person: personToEdit)
         } else {
-            return PersonDetailTableViewController(coder: coder, person: nil)
+            return PersonDetailViewController(coder: coder, person: nil)
         }
     }
     

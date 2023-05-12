@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PersonDetailTableViewController: UITableViewController {
+class PersonDetailViewController: UIViewController {
     
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
