@@ -22,7 +22,10 @@ class PersonCoreDataTableViewController: UITableViewController {
         // some test data.
         //
         // DataLoader.loadInitialData()
+        
+        // initial creation of context object, will be used for other requests...
         context = appDelegate.persistentContainer.viewContext
+        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PersonCD")
         request.returnsObjectsAsFaults = false
         
@@ -32,7 +35,36 @@ class PersonCoreDataTableViewController: UITableViewController {
             print("Failed")
         }
     }
+    
+    @IBAction func unwindToPersonCDTableView(_ segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind",
+            let sourceViewController = segue.source as? PersonCoreDataDetailViewController,
+            let person = sourceViewController.person else { return }
+        
+        if sourceViewController.result != .success {
+            return
+        }
+        
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tableView.reloadRows(at: [selectedIndexPath], with: .none)
+        } else {
+            // add the new record to your source of data
+            let newIndexPath = IndexPath(row: people.count, section: 0)
+            people.append(person)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
 
+    @IBSegueAction func addEditPerson(_ coder: NSCoder, sender: Any?) -> PersonCoreDataDetailViewController? {
+        if let cell = sender as? UITableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            let personToEdit = people[indexPath.row] as! PersonCD
+            return PersonCoreDataDetailViewController(coder: coder, person: personToEdit)
+        } else {
+            return PersonCoreDataDetailViewController(coder: coder, person: nil)
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

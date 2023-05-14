@@ -24,6 +24,7 @@
 		5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3729DCA09D00643055 /* PlistPersistable.swift */; };
 		5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3929DCA2D800643055 /* Utilities.swift */; };
 		5541AA3F29DE064E00643055 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3E29DE064E00643055 /* PersonDetailViewController.swift */; };
+		55E2E04B2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2E04A2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift */; };
 		55F8B91229F5C3FA000C48D0 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 55F8B91129F5C3FA000C48D0 /* LICENSE.md */; };
 		55F8B91B29F82933000C48D0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55F8B91A29F82933000C48D0 /* README.md */; };
 		55F8B91D29F8293C000C48D0 /* diagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 55F8B91C29F8293C000C48D0 /* diagram.png */; };
@@ -61,6 +62,7 @@
 		5541AA3729DCA09D00643055 /* PlistPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistPersistable.swift; sourceTree = "<group>"; };
 		5541AA3929DCA2D800643055 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5541AA3E29DE064E00643055 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		55E2E04A2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCoreDataDetailViewController.swift; sourceTree = "<group>"; };
 		55F8B91129F5C3FA000C48D0 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		55F8B91A29F82933000C48D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		55F8B91C29F8293C000C48D0 /* diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diagram.png; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */,
 				55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */,
 				55F8B9A12A01A2F7000C48D0 /* PersonCoreDataTableViewController.swift */,
+				55E2E04A2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				55FB146029E73CA600599CC3 /* RemotePersonDetailTableViewController.swift in Sources */,
 				55FB146429E851A500599CC3 /* PersonDataManager.swift in Sources */,
 				55F8B99D2A019FFD000C48D0 /* PhoneNumberCD+CoreDataClass.swift in Sources */,
+				55E2E04B2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift in Sources */,
 				5541AA0329D9EC3E00643055 /* SceneDelegate.swift in Sources */,
 				55F8B97C2A019148000C48D0 /* PersonModel.xcdatamodeld in Sources */,
 				5541AA1B29D9F15000643055 /* Address.swift in Sources */,

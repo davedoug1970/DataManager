@@ -55,10 +55,10 @@ class PersonDetailViewController: UIViewController {
             phoneNumberTextField.text = editPerson.phoneNumbers[0].number
             changeType = .edit
             
-            title = "Edit Person (local)"
+            title = "Edit Person (Local)"
         } else {
             changeType = .add
-            title = "Add Person (local)"
+            title = "Add Person (Local)"
         }
     }
 

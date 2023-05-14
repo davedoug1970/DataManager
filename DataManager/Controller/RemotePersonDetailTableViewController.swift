@@ -47,9 +47,9 @@ class RemotePersonDetailTableViewController: UITableViewController {
             phoneTypeTextField.text = editPerson.phoneNumbers[0].type.rawValue
             phoneNumberTextField.text = editPerson.phoneNumbers[0].number
             
-            title = "Edit Person (remote)"
+            title = "Edit Person (Remote)"
         } else {
-            title = "Add Person (remote)"
+            title = "Add Person (Remote)"
         }
     }
 
