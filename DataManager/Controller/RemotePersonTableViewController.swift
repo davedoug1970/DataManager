@@ -38,7 +38,7 @@ class RemotePersonTableViewController: UITableViewController {
 
     @IBAction func unwindToRemotePersonTableView(_ segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind",
-            let sourceViewController = segue.source as? RemotePersonDetailTableViewController,
+            let sourceViewController = segue.source as? RemotePersonDetailViewController,
             let person = sourceViewController.person else { return }
         
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
@@ -83,13 +83,13 @@ class RemotePersonTableViewController: UITableViewController {
         }
     }
     
-    @IBSegueAction func addEditPerson(_ coder: NSCoder, sender: Any?) -> RemotePersonDetailTableViewController? {
+    @IBSegueAction func addEditPerson(_ coder: NSCoder, sender: Any?) -> RemotePersonDetailViewController? {
         if let cell = sender as? UITableViewCell,
            let indexPath = tableView.indexPath(for: cell) {
             let personToEdit = people[indexPath.row]
-            return RemotePersonDetailTableViewController(coder: coder, person: personToEdit)
+            return RemotePersonDetailViewController(coder: coder, person: personToEdit)
         } else {
-            return RemotePersonDetailTableViewController(coder: coder, person: nil)
+            return RemotePersonDetailViewController(coder: coder, person: nil)
         }
     }
     

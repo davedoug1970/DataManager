@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RemotePersonDetailTableViewController: UITableViewController {
+class RemotePersonDetailViewController: UIViewController {
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var genderTextField: UITextField!

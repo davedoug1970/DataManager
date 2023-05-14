@@ -37,7 +37,7 @@
 		55F8B9C72A01ABBD000C48D0 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8B9C62A01ABBD000C48D0 /* DataLoader.swift */; };
 		55FB145C29E6FC2A00599CC3 /* RemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */; };
 		55FB145E29E7383800599CC3 /* RemotePersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */; };
-		55FB146029E73CA600599CC3 /* RemotePersonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */; };
+		55FB146029E73CA600599CC3 /* RemotePersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB145F29E73CA600599CC3 /* RemotePersonDetailViewController.swift */; };
 		55FB146229E84F2300599CC3 /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB146129E84F2300599CC3 /* SharedDataManager.swift */; };
 		55FB146429E851A500599CC3 /* PersonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB146329E851A500599CC3 /* PersonDataManager.swift */; };
 /* End PBXBuildFile section */
@@ -75,7 +75,7 @@
 		55F8B9C62A01ABBD000C48D0 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		55FB145B29E6FC2A00599CC3 /* RemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataManager.swift; sourceTree = "<group>"; };
 		55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePersonTableViewController.swift; sourceTree = "<group>"; };
-		55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePersonDetailTableViewController.swift; sourceTree = "<group>"; };
+		55FB145F29E73CA600599CC3 /* RemotePersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePersonDetailViewController.swift; sourceTree = "<group>"; };
 		55FB146129E84F2300599CC3 /* SharedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDataManager.swift; sourceTree = "<group>"; };
 		55FB146329E851A500599CC3 /* PersonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,7 +155,7 @@
 				5541AA2329DA4B1500643055 /* PersonTableViewController.swift */,
 				5541AA3E29DE064E00643055 /* PersonDetailViewController.swift */,
 				55FB145D29E7383800599CC3 /* RemotePersonTableViewController.swift */,
-				55FB145F29E73CA600599CC3 /* RemotePersonDetailTableViewController.swift */,
+				55FB145F29E73CA600599CC3 /* RemotePersonDetailViewController.swift */,
 				55F8B9A12A01A2F7000C48D0 /* PersonCoreDataTableViewController.swift */,
 				55E2E04A2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift */,
 			);
@@ -277,7 +277,7 @@
 				5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */,
 				55F8B9A22A01A2F7000C48D0 /* PersonCoreDataTableViewController.swift in Sources */,
 				55F8B99F2A019FFD000C48D0 /* PersonCD+CoreDataClass.swift in Sources */,
-				55FB146029E73CA600599CC3 /* RemotePersonDetailTableViewController.swift in Sources */,
+				55FB146029E73CA600599CC3 /* RemotePersonDetailViewController.swift in Sources */,
 				55FB146429E851A500599CC3 /* PersonDataManager.swift in Sources */,
 				55F8B99D2A019FFD000C48D0 /* PhoneNumberCD+CoreDataClass.swift in Sources */,
 				55E2E04B2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift in Sources */,
