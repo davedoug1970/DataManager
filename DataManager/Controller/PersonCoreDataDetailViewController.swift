@@ -82,29 +82,39 @@ class PersonCoreDataDetailViewController: UIViewController {
         
         // if person has been set, we are editing...
         if person != nil {
+            // modify NSManagedObject on an edit...
+            var phoneNumbers = NSSet()
+            
             if let personToPhoneNumber = person!.personToPhoneNumber {
                 let tempPhoneNumbers = Array(personToPhoneNumber) as! [NSManagedObject]
                 setPhoneNumberValues(phoneNumber: tempPhoneNumbers[0])
-                let phoneNumbers = NSSet(array: tempPhoneNumbers)
-                
-                setPersonValues(person: person!, phoneNumbers: phoneNumbers)
+                phoneNumbers = NSSet(array: tempPhoneNumbers)
             }
+            
+            setPersonValues(person: person!, phoneNumbers: phoneNumbers)
         } else {
+            // get reference to PersonCD entity
             let entityPerson = NSEntityDescription.entity(forEntityName: "PersonCD", in: context)
+            // get reference to PhoneNumberCD entity
             let entityPhoneNumber = NSEntityDescription.entity(forEntityName: "PhoneNumberCD", in: context)
             
+            // use PhoneNumberCD entity to create new PhoneNumberCD NSManagedObject
             let newPhoneNumber = NSManagedObject(entity: entityPhoneNumber!, insertInto: context)
+            // update new NSManagedObject with data from the view
             setPhoneNumberValues(phoneNumber: newPhoneNumber)
             let phoneNumbers = NSSet(array: [newPhoneNumber])
             
+            // use PersonCD entity to create new PersonCD NSManagedObject
             let newPerson = NSManagedObject(entity: entityPerson!, insertInto: context)
+            // update new NSManagedObject with data from the view and PhoneNumberCD NSManagedObject
             setPersonValues(person: newPerson, phoneNumbers: phoneNumbers)
             
+            // set return value equal to the newly created PersonCD NSManagedObject
             self.person = newPerson as? PersonCD
         }
         
-        // save the data...
         do {
+            // save changes to the context. Will handle either edit or add situation
             try context.save()
             result = .success
          } catch {
