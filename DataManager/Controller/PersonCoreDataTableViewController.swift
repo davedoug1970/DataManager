@@ -4,6 +4,9 @@
 //
 //  Created by David Douglas on 5/2/23.
 //
+//  this article was very helpful.
+//  https://cynoteck.com/blog-post/core-data-with-swift/
+//
 
 import UIKit
 import CoreData
