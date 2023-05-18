@@ -154,12 +154,9 @@
 		5541AA1729D9EFEF00643055 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				556C750B2A16F01900D50F4D /* Local */,
 				556C74F82A169F8B00D50F4D /* Realm */,
 				55F8B9792A019123000C48D0 /* CoreData */,
-				55FB146329E851A500599CC3 /* PersonDataManager.swift */,
-				5541AA1829D9F00000643055 /* Person.swift */,
-				5541AA1A29D9F15000643055 /* Address.swift */,
-				5541AA1C29D9F19800643055 /* PhoneNumber.swift */,
 				5541AA3D29DDCB9600643055 /* DataManager */,
 				55F8B91529F5C685000C48D0 /* RemoteDataManager */,
 			);
@@ -203,6 +200,17 @@
 				556C75052A16A62600D50F4D /* RealmLoader.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		556C750B2A16F01900D50F4D /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				55FB146329E851A500599CC3 /* PersonDataManager.swift */,
+				5541AA1829D9F00000643055 /* Person.swift */,
+				5541AA1A29D9F15000643055 /* Address.swift */,
+				5541AA1C29D9F19800643055 /* PhoneNumber.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		55F8B91529F5C685000C48D0 /* RemoteDataManager */ = {
