@@ -26,3 +26,12 @@ Swift built in classes used:
 <p align="center">
     <img src="diagram.png" alt="diagram" />
 </p>
+
+## Example Data Provider Implementations
+
+In addtion to the DataManager, which store objects as JSON or Plists, I have added several different implementations for various other data providers.
+
+Data Providers Implemented:
+- API 
+- CoreData
+- Realm

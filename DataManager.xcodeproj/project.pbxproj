@@ -24,6 +24,14 @@
 		5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3729DCA09D00643055 /* PlistPersistable.swift */; };
 		5541AA3A29DCA2D800643055 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3929DCA2D800643055 /* Utilities.swift */; };
 		5541AA3F29DE064E00643055 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5541AA3E29DE064E00643055 /* PersonDetailViewController.swift */; };
+		556C74F52A169F6200D50F4D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 556C74F42A169F6200D50F4D /* Realm */; };
+		556C74F72A169F6200D50F4D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 556C74F62A169F6200D50F4D /* RealmSwift */; };
+		556C74FA2A169FAB00D50F4D /* PersonRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C74F92A169FAB00D50F4D /* PersonRM.swift */; };
+		556C74FE2A16A1B800D50F4D /* AddressRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C74FD2A16A1B800D50F4D /* AddressRM.swift */; };
+		556C75002A16A1C600D50F4D /* PhoneNumberRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C74FF2A16A1C600D50F4D /* PhoneNumberRM.swift */; };
+		556C75042A16A5B200D50F4D /* PersonRealmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C75032A16A5B200D50F4D /* PersonRealmTableViewController.swift */; };
+		556C75062A16A62600D50F4D /* RealmLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C75052A16A62600D50F4D /* RealmLoader.swift */; };
+		556C750A2A16E1F400D50F4D /* PersonRealmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C75092A16E1F400D50F4D /* PersonRealmDetailViewController.swift */; };
 		55E2E04B2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2E04A2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift */; };
 		55F8B91229F5C3FA000C48D0 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 55F8B91129F5C3FA000C48D0 /* LICENSE.md */; };
 		55F8B91B29F82933000C48D0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55F8B91A29F82933000C48D0 /* README.md */; };
@@ -62,6 +70,12 @@
 		5541AA3729DCA09D00643055 /* PlistPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistPersistable.swift; sourceTree = "<group>"; };
 		5541AA3929DCA2D800643055 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5541AA3E29DE064E00643055 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		556C74F92A169FAB00D50F4D /* PersonRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRM.swift; sourceTree = "<group>"; };
+		556C74FD2A16A1B800D50F4D /* AddressRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRM.swift; sourceTree = "<group>"; };
+		556C74FF2A16A1C600D50F4D /* PhoneNumberRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberRM.swift; sourceTree = "<group>"; };
+		556C75032A16A5B200D50F4D /* PersonRealmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRealmTableViewController.swift; sourceTree = "<group>"; };
+		556C75052A16A62600D50F4D /* RealmLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLoader.swift; sourceTree = "<group>"; };
+		556C75092A16E1F400D50F4D /* PersonRealmDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRealmDetailViewController.swift; sourceTree = "<group>"; };
 		55E2E04A2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCoreDataDetailViewController.swift; sourceTree = "<group>"; };
 		55F8B91129F5C3FA000C48D0 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		55F8B91A29F82933000C48D0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -85,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556C74F72A169F6200D50F4D /* RealmSwift in Frameworks */,
+				556C74F52A169F6200D50F4D /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +154,7 @@
 		5541AA1729D9EFEF00643055 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				556C74F82A169F8B00D50F4D /* Realm */,
 				55F8B9792A019123000C48D0 /* CoreData */,
 				55FB146329E851A500599CC3 /* PersonDataManager.swift */,
 				5541AA1829D9F00000643055 /* Person.swift */,
@@ -158,6 +175,8 @@
 				55FB145F29E73CA600599CC3 /* RemotePersonDetailViewController.swift */,
 				55F8B9A12A01A2F7000C48D0 /* PersonCoreDataTableViewController.swift */,
 				55E2E04A2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift */,
+				556C75032A16A5B200D50F4D /* PersonRealmTableViewController.swift */,
+				556C75092A16E1F400D50F4D /* PersonRealmDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +192,17 @@
 				55FB146129E84F2300599CC3 /* SharedDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		556C74F82A169F8B00D50F4D /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				556C74F92A169FAB00D50F4D /* PersonRM.swift */,
+				556C74FD2A16A1B800D50F4D /* AddressRM.swift */,
+				556C74FF2A16A1C600D50F4D /* PhoneNumberRM.swift */,
+				556C75052A16A62600D50F4D /* RealmLoader.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		55F8B91529F5C685000C48D0 /* RemoteDataManager */ = {
@@ -212,6 +242,10 @@
 			dependencies = (
 			);
 			name = DataManager;
+			packageProductDependencies = (
+				556C74F42A169F6200D50F4D /* Realm */,
+				556C74F62A169F6200D50F4D /* RealmSwift */,
+			);
 			productName = DataManager;
 			productReference = 5541A9FD29D9EC3E00643055 /* DataManager.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +274,9 @@
 				Base,
 			);
 			mainGroup = 5541A9F429D9EC3E00643055;
+			packageReferences = (
+				556C74F32A169F6200D50F4D /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 5541A9FE29D9EC3E00643055 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -280,19 +317,25 @@
 				55FB146029E73CA600599CC3 /* RemotePersonDetailViewController.swift in Sources */,
 				55FB146429E851A500599CC3 /* PersonDataManager.swift in Sources */,
 				55F8B99D2A019FFD000C48D0 /* PhoneNumberCD+CoreDataClass.swift in Sources */,
+				556C75002A16A1C600D50F4D /* PhoneNumberRM.swift in Sources */,
 				55E2E04B2A1000E00075BA1B /* PersonCoreDataDetailViewController.swift in Sources */,
 				5541AA0329D9EC3E00643055 /* SceneDelegate.swift in Sources */,
 				55F8B97C2A019148000C48D0 /* PersonModel.xcdatamodeld in Sources */,
+				556C74FA2A169FAB00D50F4D /* PersonRM.swift in Sources */,
 				5541AA1B29D9F15000643055 /* Address.swift in Sources */,
 				55FB145C29E6FC2A00599CC3 /* RemoteDataManager.swift in Sources */,
 				55F8B9A02A019FFD000C48D0 /* PersonCD+CoreDataProperties.swift in Sources */,
 				5541AA3429DB9D4200643055 /* DataManager.swift in Sources */,
 				5541AA3829DCA09D00643055 /* PlistPersistable.swift in Sources */,
 				5541AA2E29DB703400643055 /* JsonPersistable.swift in Sources */,
+				556C74FE2A16A1B800D50F4D /* AddressRM.swift in Sources */,
 				5541AA3229DB975500643055 /* Persistable.swift in Sources */,
+				556C750A2A16E1F400D50F4D /* PersonRealmDetailViewController.swift in Sources */,
 				5541AA3F29DE064E00643055 /* PersonDetailViewController.swift in Sources */,
+				556C75062A16A62600D50F4D /* RealmLoader.swift in Sources */,
 				5541AA1D29D9F19800643055 /* PhoneNumber.swift in Sources */,
 				55FB145E29E7383800599CC3 /* RemotePersonTableViewController.swift in Sources */,
+				556C75042A16A5B200D50F4D /* PersonRealmTableViewController.swift in Sources */,
 				55F8B9C72A01ABBD000C48D0 /* DataLoader.swift in Sources */,
 				55FB146229E84F2300599CC3 /* SharedDataManager.swift in Sources */,
 				55F8B99E2A019FFD000C48D0 /* PhoneNumberCD+CoreDataProperties.swift in Sources */,
@@ -514,6 +557,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		556C74F32A169F6200D50F4D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.39.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		556C74F42A169F6200D50F4D /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 556C74F32A169F6200D50F4D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		556C74F62A169F6200D50F4D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 556C74F32A169F6200D50F4D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		55F8B97A2A019148000C48D0 /* PersonModel.xcdatamodeld */ = {

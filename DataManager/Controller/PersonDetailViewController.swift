@@ -121,5 +121,4 @@ class PersonDetailViewController: UIViewController {
             person = Person(id: UUID(), firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, gender: gender, age: Int(ageTextField.text!)!, address: tempAddress, phoneNumbers: [tempPhoneNumber])
         }
     }
-
 }
